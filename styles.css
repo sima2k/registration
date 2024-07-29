@@ -1,0 +1,150 @@
+body {
+    background: url('image/pexels-jerseypics-1046493.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    animation: moveBackground 20s linear infinite;
+}
+
+.container-fluid {
+    background: rgba(0, 0, 0, 0.5); /* Adding a dark overlay */
+}
+
+.registration-form {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 350px; /* Adjusted max-width for a more compact form */
+    width: 100%;
+    margin: auto;
+    position: relative;
+    overflow: hidden; /* Ensures the border is contained within the form */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adding a shadow */
+    color: #fff; /* Ensures text is readable */
+    z-index: 1; /* Ensure the border appears below the form content */
+}
+
+.registration-form::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 15px; /* Slightly larger radius for a more rounded effect */
+    background: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet);
+    background-size: 200% 200%;
+    z-index: -1;
+    animation: borderAnimation 8s linear infinite, rotateBorder 12s infinite linear;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Adding a shadow for a 3D effect */
+}
+
+@keyframes borderAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes rotateBorder {
+    0% {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        transform: rotateX(180deg) rotateY(180deg);
+    }
+    100% {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+.registration-form h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: black; /* Black color for the heading */
+    font-weight: bold;
+}
+
+.registration-form .form-control {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    transition: all 0.3s ease; /* Smooth transitions */
+}
+
+.registration-form .form-control:focus {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Blue glow on focus */
+}
+
+.registration-form .btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.registration-form .btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Lift button on hover */
+}
+
+#password-strength {
+    height: 10px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+    display: none; /* Hide initially */
+}
+
+#password-strength div {
+    height: 100%;
+    width: 0;
+    transition: width 0.5s;
+}
+
+.tooltip-inner {
+    max-width: 200px;
+    text-align: left;
+}
+
+#form-progress {
+    width: 100%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#form-progress div {
+    height: 100%;
+    width: 0;
+    background-color: green;
+    transition: width 0.5s;
+}
+
+/* Keyframes for the background animation */
+@keyframes moveBackground {
+    0% { background-position: 0 0; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0 0; }
+}
+
+/* Styles for the user icon and registration title */
+.registration-form .icon-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.registration-form .icon-container i {
+    font-size: 3rem;
+    color: black; /* Black color for the icon */
+    font-weight: bold;
+}
